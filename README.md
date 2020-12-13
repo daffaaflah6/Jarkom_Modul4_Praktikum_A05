@@ -43,7 +43,11 @@ Berdasarkan total IP dan netmask yang dibutuhkan, maka kita dapat menggunakan ne
 
 ![pembagian-pohon-vlsm](https://user-images.githubusercontent.com/52326074/101973456-de608700-3c6a-11eb-8846-46c1c6dd514a.jpg)
 
-- Top]ologi pada CPT
+- Pembagian IP server menggunakan IP DMZ adalah sebagai berikut
+
+![pembagian-dmz](https://user-images.githubusercontent.com/52326074/102003916-3ddb9700-3d3e-11eb-9dad-268a53ce64f5.jpg)
+
+- Topologi pada CPT
 
 ![topologi-cpt](https://user-images.githubusercontent.com/52326074/101975189-2f717a80-3c6d-11eb-9021-f9134ea7344c.jpg)
 
