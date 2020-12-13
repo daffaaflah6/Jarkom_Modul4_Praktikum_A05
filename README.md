@@ -58,6 +58,10 @@ Berdasarkan total IP dan netmask yang dibutuhkan, maka kita dapat menggunakan ne
 
 ![pembagian-dmz](https://user-images.githubusercontent.com/52326074/102003916-3ddb9700-3d3e-11eb-9dad-268a53ce64f5.jpg)
 
+- Pembagian IP dan penentuan broadcast address berdasarkan subnet dalam pembagian pohon
+
+![tabel-cidr](https://user-images.githubusercontent.com/52326074/102012541-aac25180-3d7d-11eb-9a45-0a8bf3f7a13f.jpg)
+
 ### Topologi
 
 ![topologi-uml](https://user-images.githubusercontent.com/52326074/102011033-4949b500-3d74-11eb-8fb5-316bec1c66a0.jpg)
@@ -69,50 +73,65 @@ Berdasarkan total IP dan netmask yang dibutuhkan, maka kita dapat menggunakan ne
 
 ##### ROUTER
 - SURABAYA
+
 ![SURABAYA](https://user-images.githubusercontent.com/52326074/102011282-bdd12380-3d75-11eb-9c8b-66b50dba634a.jpg)
 
 - PASURUAN
+
 ![PASURUAN](https://user-images.githubusercontent.com/52326074/102011278-bb6ec980-3d75-11eb-9416-ab6eb19b8be4.jpg)
 
 - PROBOLINGGO
+
 ![PROBOLINGGO](https://user-images.githubusercontent.com/52326074/102011279-bc076000-3d75-11eb-9ea9-a42d14a96d55.jpg)
 
 - BATU
+
 ![BATU](https://user-images.githubusercontent.com/52326074/102011264-b4e05200-3d75-11eb-950c-135ab8c6ca65.jpg)
 
 - KEDIRI
+
 ![KEDIRI](https://user-images.githubusercontent.com/52326074/102011272-b873d900-3d75-11eb-9009-8e923d65d1bf.jpg)
 
 - BLITAR
+
 ![BLITAR](https://user-images.githubusercontent.com/52326074/102011265-b6117f00-3d75-11eb-8c3e-702c96d2477d.jpg)
 
 - MADIUN
+
 ![MADIUN](https://user-images.githubusercontent.com/52326074/102011274-b9a50600-3d75-11eb-97a6-8b7a3d0b6cbc.jpg)
 
 ##### SERVER
 - MALANG
+
 ![MALANG](https://user-images.githubusercontent.com/52326074/102011275-b9a50600-3d75-11eb-804a-e4006acdb2b5.jpg)
 
 - MOJOKERTO
+
 ![MOJOKERTO](https://user-images.githubusercontent.com/52326074/102011276-ba3d9c80-3d75-11eb-953e-9cff2e98af5c.jpg)
 
 ##### CLIENT
 - SAMPANG
+
 ![SAMPANG](https://user-images.githubusercontent.com/52326074/102011280-bc9ff680-3d75-11eb-886c-458c640eba1e.jpg)
 
 - BONDOWOSO
+
 ![BONDOWOSO](https://user-images.githubusercontent.com/52326074/102011268-b6aa1580-3d75-11eb-93bd-a8717dfb5f2d.jpg)
 
 - JEMBER
+
 ![JEMBER](https://user-images.githubusercontent.com/52326074/102011270-b742ac00-3d75-11eb-9779-29050e2ee417.jpg)
 
 - BANYUWANGI
+
 ![BANYUWANGI](https://user-images.githubusercontent.com/52326074/102011263-b3af2500-3d75-11eb-8c79-168fad67d2ee.jpg)
 
 - SIDOARJO
+
 ![SIDOARJO](https://user-images.githubusercontent.com/52326074/102011281-bd388d00-3d75-11eb-9a99-f637b221fdfd.jpg)
 
 - LUMAJANG
+
 ![LUMAJANG](https://user-images.githubusercontent.com/52326074/102011273-b90c6f80-3d75-11eb-9cbb-f2916e961aaf.jpg)
 
 - TULUNGAGUNG
@@ -122,19 +141,87 @@ Berdasarkan total IP dan netmask yang dibutuhkan, maka kita dapat menggunakan ne
 ![NGANJUK](https://user-images.githubusercontent.com/52326074/102011277-bad63300-3d75-11eb-8092-99ff7f89aa82.jpg)
 
 - BOJONEGORO
+
 ![BOJONEGORO](https://user-images.githubusercontent.com/52326074/102011266-b6117f00-3d75-11eb-8155-70e78e3260cc.jpg)
 
 - JOMBANG
+
 ![JOMBANG](https://user-images.githubusercontent.com/52326074/102011271-b7db4280-3d75-11eb-8c51-edcad7ab4bb4.jpg)
 
 ##### ROUTING
 
-Kita tidak perlu menambahkan default routing pada router di UML karena sudah ada. Sehingga kita hanya menambahkan routing pada router `SURABAYA`, `PASURUAN`, `BATU`, dan `KEDIRI`
+Kita tidak perlu menambahkan default routing pada router di UML karena sudah ada. Sehingga kita hanya menambahkan routing pada router `SURABAYA`, `PASURUAN`, `BATU`, dan `KEDIRI` disimpan dalam sebuah file bash `route.sh` untuk ke empat UML
 
 ![route-SURABAYA](https://user-images.githubusercontent.com/52326074/102011390-4780f100-3d76-11eb-9395-811891484d1d.jpg)
+
 ![route-PASURUAN](https://user-images.githubusercontent.com/52326074/102011389-464fc400-3d76-11eb-8d7a-3bceca398c15.jpg)
+
 ![route-BATU](https://user-images.githubusercontent.com/52326074/102011392-48198780-3d76-11eb-92f6-7ae21be9df4d.jpg)
+
 ![route-KEDIRI](https://user-images.githubusercontent.com/52326074/102011393-48b21e00-3d76-11eb-9b65-257ed8ec95b5.jpg)
 
 - Restart network dengan mengetikkan `service networking restart` pada setiap UML
-- Pada semua router jalankan `iptables –t nat –A POSTROUTING –o eth0 –j MASQUERADE –s 192.168.0.0/16`
+- Pada semua router jalankan `iptables –t nat –A POSTROUTING –o eth0 –j MASQUERADE –s 192.168.0.0/16` agar UML dapat mengakses internet
+- Karena di UML setiap ada restart, route akan hilang, maka menjalankan bash script pada UML, menggunakan perintah `source`, sehingga untuk menjalankan route.sh dengan perintah `source route.sh`
+- Selanjutnya tes di setiap UML dengan menjalankan perintah `ping its.ac.id`
+
+##### PING its.ac.id
+- SURABAYA
+
+![ping-SURABAYA](https://user-images.githubusercontent.com/52326074/102012089-fd4e3e80-3d7a-11eb-825c-dca1840b34dc.jpg)
+
+- PASURUAN
+- PROBOLINGGO
+- BATU
+
+![ping-BATU](https://user-images.githubusercontent.com/52326074/102012095-ff180200-3d7a-11eb-980a-69adf2b8fd7d.jpg)
+
+- KEDIRI
+
+![ping-KEDIRI](https://user-images.githubusercontent.com/52326074/102012092-fde6d500-3d7a-11eb-9d26-955c68ae2c99.jpg)
+
+- BLITAR
+
+![ping-BLITAR](https://user-images.githubusercontent.com/52326074/102012094-fe7f6b80-3d7a-11eb-8767-ec4eb023ec81.jpg)
+
+- MADIUN
+
+![ping-MADIUN](https://user-images.githubusercontent.com/52326074/102012093-fde6d500-3d7a-11eb-8e11-f01b6559a034.jpg)
+
+- MALANG
+
+![ping-MALANG](https://user-images.githubusercontent.com/52326074/102012096-ffb09880-3d7a-11eb-8500-d3d86d5436c0.jpg)
+
+- MOJOKERTO
+- SAMPANG
+
+![ping-SAMPANG](https://user-images.githubusercontent.com/52326074/102012088-fcb5a800-3d7a-11eb-974f-ab77e0a1034f.jpg)
+
+- BONDOWOSO
+- JEMBER
+- BANYUWANGI
+- SIDOARJO
+- LUMAJANG
+
+![ping-LUMAJANG](https://user-images.githubusercontent.com/52326074/102012097-00492f00-3d7b-11eb-9056-5628e9b6b395.jpg)
+
+- TULUNGAGUNG
+
+![ping-TULUNGAGUNG](https://user-images.githubusercontent.com/52326074/102012086-fb847b00-3d7a-11eb-9f73-39a545d57040.jpg)
+
+- NGANJUK
+
+![ping-NGANJUK](https://user-images.githubusercontent.com/52326074/102012084-fa534e00-3d7a-11eb-94d9-5728ce365645.jpg)
+
+- BOJONEGORO
+
+![ping-BOJONEGORO](https://user-images.githubusercontent.com/52326074/102012083-f8898a80-3d7a-11eb-8f59-be18623d80d7.jpg)
+
+- JOMBANG
+
+![ping-JOMBANG](https://user-images.githubusercontent.com/52326074/102012087-fc1d1180-3d7a-11eb-8deb-434b103a1d38.jpg)
+
+- Setelah itu, lakukan update pada setiap UML dengan mengetikkan `apt-get update`
+- Terakhir, untuk mematikan UML JANGAN langsung di close. Ketikkan `halt` pada setiap UML untuk mematikannya. Alternatif lain adalah dengan membuat script dengan ekstensi .sh supaya mempermudah serta mempercepat kalian untuk mematikannya. Sebagai contoh buat file bernama `bye.sh` kemudian simpan script yang sudah dibuat kemudian jalankan dengan mengetikkan `bash bye.sh`
+
+![halt-uml](https://user-images.githubusercontent.com/52326074/102012652-363be280-3d7e-11eb-90a0-ab8d638e32eb.jpg)
