@@ -35,13 +35,13 @@ Keterangan : Bila di `CPT menggunakan VLSM`, maka di `UML menggunakan CIDR` atau
 
 - Menentukan jumlah alamat IP yang dibutuhkan oleh tiap subnet dan melakukan labelling netmask berdasarkan jumlah IP yang dibutuhkan
 
-![tabel-vlsm](https://user-images.githubusercontent.com/52326074/101973438-bbce6e00-3c6a-11eb-9007-563abb154619.jpg)
+![tabel-vlsm](https://user-images.githubusercontent.com/52326074/102013439-cbd97100-3d82-11eb-904a-b9e95396dca4.jpg)
 
 Berdasarkan total IP dan netmask yang dibutuhkan, maka kita dapat menggunakan netmask /19 untuk memberikan pengalamatan IP pada subnet.
 
 - Membuat pohon untuk perhitungan dan pembagian IP
 
-![pembagian-pohon-vlsm](https://user-images.githubusercontent.com/52326074/101973456-de608700-3c6a-11eb-8846-46c1c6dd514a.jpg)
+![pembagian-pohon-vlsm](https://user-images.githubusercontent.com/52326074/102013437-c9771700-3d82-11eb-98bc-ccb3f941b62e.jpg)
 
 - Topologi pada CPT
 
@@ -135,9 +135,11 @@ Berdasarkan total IP dan netmask yang dibutuhkan, maka kita dapat menggunakan ne
 ![LUMAJANG](https://user-images.githubusercontent.com/52326074/102011273-b90c6f80-3d75-11eb-9cbb-f2916e961aaf.jpg)
 
 - TULUNGAGUNG
+
 ![TULUNGAGUNG](https://user-images.githubusercontent.com/52326074/102011262-b27df800-3d75-11eb-8f02-839f5cd05d15.jpg)
 
 - NGANJUK
+
 ![NGANJUK](https://user-images.githubusercontent.com/52326074/102011277-bad63300-3d75-11eb-8092-99ff7f89aa82.jpg)
 
 - BOJONEGORO
