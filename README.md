@@ -49,8 +49,9 @@ Berdasarkan total IP dan netmask yang dibutuhkan, maka kita dapat menggunakan ne
 
 - Melakukan Testing
 
-Untuk pembuktian bahwa routing dapat berjalan semestinya, maka kami melakukan testing sebagai berikut. 
+Untuk pembuktian bahwa routing dapat berjalan semestinya, maka kami melakukan `testing` sebagai berikut. 
 
+```
 ping dari KEDIRI ke JEMBER
 
 ping dari BONDOWOSO ke MADIUN
@@ -68,12 +69,13 @@ ping dari LUMAJANG ke BONDOWOSO
 ping dari NGANJUK ke LUMAJANG
 
 ping dari SIDOARJO ke BOJONEGORO
+```
 
 ![messageImage_1607866076158](https://user-images.githubusercontent.com/56763600/102013983-74410280-3d8e-11eb-8e54-dd8aa7572c9c.jpg)
 
 ![messageImage_1607866498616](https://user-images.githubusercontent.com/56763600/102013984-76a35c80-3d8e-11eb-93e4-a61259ab4945.jpg)
 
-# CIDR (Menggunakana UML)
+# CIDR (Menggunakan UML)
 ![cidr](https://user-images.githubusercontent.com/52326074/101973469-f3d5b100-3c6a-11eb-8054-f4a0db6b30b6.png)
 
 - Pembagian IP dengan pohon berdasarkan penggabungan subnet yang telah dilakukan
