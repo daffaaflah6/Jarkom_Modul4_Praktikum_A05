@@ -196,12 +196,13 @@ Kita tidak perlu menambahkan default routing pada router di UML karena sudah ada
 - Selanjutnya tes di setiap UML dengan menjalankan perintah `ping its.ac.id`
 
 ##### PING its.ac.id
+
+Berikut adalah bukti ping `its.ac.id` beberapa UML.
+
 - SURABAYA
 
 ![ping-SURABAYA](https://user-images.githubusercontent.com/52326074/102012089-fd4e3e80-3d7a-11eb-825c-dca1840b34dc.jpg)
 
-- PASURUAN
-- PROBOLINGGO
 - BATU
 
 ![ping-BATU](https://user-images.githubusercontent.com/52326074/102012095-ff180200-3d7a-11eb-980a-69adf2b8fd7d.jpg)
@@ -222,15 +223,10 @@ Kita tidak perlu menambahkan default routing pada router di UML karena sudah ada
 
 ![ping-MALANG](https://user-images.githubusercontent.com/52326074/102012096-ffb09880-3d7a-11eb-8500-d3d86d5436c0.jpg)
 
-- MOJOKERTO
 - SAMPANG
 
 ![ping-SAMPANG](https://user-images.githubusercontent.com/52326074/102012088-fcb5a800-3d7a-11eb-974f-ab77e0a1034f.jpg)
 
-- BONDOWOSO
-- JEMBER
-- BANYUWANGI
-- SIDOARJO
 - LUMAJANG
 
 ![ping-LUMAJANG](https://user-images.githubusercontent.com/52326074/102012097-00492f00-3d7b-11eb-9056-5628e9b6b395.jpg)
@@ -255,3 +251,5 @@ Kita tidak perlu menambahkan default routing pada router di UML karena sudah ada
 - Terakhir, untuk mematikan UML JANGAN langsung di close. Ketikkan `halt` pada setiap UML untuk mematikannya. Alternatif lain adalah dengan membuat script dengan ekstensi .sh supaya mempermudah serta mempercepat kalian untuk mematikannya. Sebagai contoh buat file bernama `bye.sh` kemudian simpan script yang sudah dibuat kemudian jalankan dengan mengetikkan `bash bye.sh`
 
 ![halt-uml](https://user-images.githubusercontent.com/52326074/102012652-363be280-3d7e-11eb-90a0-ab8d638e32eb.jpg)
+
+# Terima Kasih :)
