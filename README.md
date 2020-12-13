@@ -47,6 +47,29 @@ Berdasarkan total IP dan netmask yang dibutuhkan, maka kita dapat menggunakan ne
 
 ![topologi-cpt](https://user-images.githubusercontent.com/52326074/101975189-2f717a80-3c6d-11eb-9021-f9134ea7344c.jpg)
 
+- Melakukan Testing
+
+Untuk pembuktian bahwa routing dapat berjalan semestinya, maka kami melakukan testing sebagai berikut. 
+
+ping dari KEDIRI ke JEMBER
+
+ping dari BONDOWOSO ke MADIUN
+
+ping dari KEDIRI ke PROBOLINGGO
+
+ping dari BOJONEGORO ke TULUNGAGUNG
+
+ping dari JOMBANG ke JEMBER
+
+ping dari SAMPANG ke BANYUWANGI
+
+ping dari LUMAJANG ke BONDOWOSO
+
+ping dari NGANJUK ke LUMAJANG
+
+ping dari SIDOARJO ke BOJONEGORO
+
+
 # CIDR (Menggunakana UML)
 ![cidr](https://user-images.githubusercontent.com/52326074/101973469-f3d5b100-3c6a-11eb-8054-f4a0db6b30b6.png)
 
